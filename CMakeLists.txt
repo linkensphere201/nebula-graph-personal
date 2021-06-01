@@ -36,6 +36,11 @@ option(ENABLE_BUILD_STORAGE "Whether to build storage" OFF)
 option(ENABLE_MODULE_UPDATE "Automatically update module" OFF)
 option(ENABLE_VERBOSE_BISON "Enable Bison to report state" OFF)
 
+# (YWJ)do not fetch!
+set(NEBULA_COMMON_SOURCE_DIR ${CMAKE_SOURCE_DIR}/modules/common)
+set(NEBULA_STORAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/modules/storage)
+
+
 add_definitions(-DNEBULA_HOME=${CMAKE_SOURCE_DIR})
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)

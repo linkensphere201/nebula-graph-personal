@@ -61,7 +61,8 @@ nebula_add_executable(
         $<TARGET_OBJECTS:common_graph_obj>
         $<TARGET_OBJECTS:common_ft_es_graph_adapter_obj>
         $<TARGET_OBJECTS:common_version_obj>
-    LIBRARIES
+        $<TARGET_OBJECTS:common_utils_obj>
+  LIBRARIES
         ${PROXYGEN_LIBRARIES}
         ${THRIFT_LIBRARIES}
         wangle
