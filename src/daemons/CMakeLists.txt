@@ -20,6 +20,7 @@ nebula_add_executable(
         $<TARGET_OBJECTS:expr_visitor_obj>
         $<TARGET_OBJECTS:optimizer_obj>
         $<TARGET_OBJECTS:planner_obj>
+        $<TARGET_OBJECTS:common_utils_obj>
         $<TARGET_OBJECTS:executor_obj>
         $<TARGET_OBJECTS:scheduler_obj>
         $<TARGET_OBJECTS:idgenerator_obj>

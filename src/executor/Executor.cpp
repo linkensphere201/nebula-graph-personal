@@ -10,6 +10,7 @@
 #include <folly/executors/InlineExecutor.h>
 
 #include "common/base/ObjectPool.h"
+#include "common/utils/mylogger.h"
 #include "common/interface/gen-cpp2/graph_types.h"
 #include "context/ExecutionContext.h"
 #include "context/QueryContext.h"
@@ -138,6 +139,9 @@ Executor *Executor::makeExecutor(const PlanNode *node,
 
 // static
 Executor *Executor::makeExecutor(QueryContext *qctx, const PlanNode *node) {
+    // trace
+    VLOG(-1) << "-- node type:" << nebula::utils::myLogger::fetchEnumName(node->kind());
+
     auto pool = qctx->objPool();
     switch (node->kind()) {
         case PlanNode::Kind::kPassThrough: {

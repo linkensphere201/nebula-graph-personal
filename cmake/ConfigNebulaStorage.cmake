@@ -45,6 +45,8 @@ macro(config_nebula_storage)
                 -DENABLE_COMPRESSED_DEBUG_INFO=${ENABLE_COMPRESSED_DEBUG_INFO}
                 -DNEBULA_USE_LINKER=${NEBULA_USE_LINKER}
                 -DENABLE_GDB_SCRIPT_SECTION=${ENABLE_GDB_SCRIPT_SECTION}
+                # -DRocksdb_INCLUDE_DIR=/home/weijian.yang/rocksdb/include
+                # -DRocksdb_LIBRARY=/home/weijian.yang/rocksdb/librocksdb.a
                 ${storage_build_version}
                 ${storage_source_dir}
         WORKING_DIRECTORY ${storage_build_dir}

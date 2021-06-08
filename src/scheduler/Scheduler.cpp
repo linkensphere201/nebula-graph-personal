@@ -64,6 +64,9 @@ void Scheduler::analyze(Executor *executor) {
 
 folly::Future<Status> Scheduler::doSchedule(Executor *executor) {
     switch (executor->node()->kind()) {
+        //
+        // add trace point here.
+        //
         case PlanNode::Kind::kSelect: {
             auto sel = static_cast<SelectExecutor *>(executor);
             return doScheduleParallel(sel->depends())

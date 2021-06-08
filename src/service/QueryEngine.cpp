@@ -66,6 +66,9 @@ Status QueryEngine::init(std::shared_ptr<folly::IOThreadPoolExecutor> ioExecutor
 }
 
 void QueryEngine::execute(RequestContextPtr rctx) {
+    // log sessionId, query
+    VLOG(-1) << "-- session_id: " << rctx->session()->id()
+        << ", query: " << rctx->query();
     auto ectx = std::make_unique<QueryContext>(std::move(rctx),
                                                schemaManager_.get(),
                                                indexManager_.get(),
